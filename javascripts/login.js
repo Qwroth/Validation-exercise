@@ -43,7 +43,6 @@ $(function() {
 		
 	});
 
-
 	
 
 	function check_username() {

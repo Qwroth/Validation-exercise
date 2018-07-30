@@ -87,23 +87,18 @@ else
 
 <body>
 <h1 align="center"id="login-heading">LOGIN</h1>
-<div>
 <br>
-<form action="index.php" method="post" class="form-login">
-Username: 
+<form align="center" action="k.php" method="post">
+Username: <input type="textbox" id="username" name="username"><br>
 <br>
-<input type="textbox" id="username" name="username"><br>
+Password: <input type="password" id="password" name ="password"><br>
 <br>
-Password: 
-<br>
-<input type="password" id="password" name ="password"><br>
-<br>
-<p class="error_message" id="login-error">Incorrect login details</p>
-<input type ="submit" value="login" class="btn btn-success" id="login-btn">
+<p class="error_message" id="login-error">Incorrect login details </p>
+<input type ="submit" value="login" class="btn" id="login-btn">
 
 
 </form>
-</div>
+
 
 </body>
 

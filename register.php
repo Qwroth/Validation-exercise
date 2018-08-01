@@ -17,7 +17,7 @@
 
 <img id ="banner" src="banner.gif" alt="Banner Image"/>
 <link rel="icon" type="image/png" href="images/favicon.ico">
-<title>Form Validation in jQuery</title>
+<title></title>
 
 
 
@@ -25,7 +25,23 @@
 	$(document).ready(function(){
 	$(".delete-link")
 	.click(function() {
-		var r = confirm("are you sure?"); 
+		var r = confirm("are you sure you wish to delete this user?"); 
+
+
+		if (r==true)
+		{
+			return true;
+		}
+		else
+		{
+			return false; 
+		}
+
+	}); 
+
+	$(".modify-link")
+	.click(function() {
+		var r = confirm("are you sure you wish to modify this user?"); 
 
 
 		if (r==true)
@@ -122,7 +138,7 @@ if ($result->num_rows > 0)
 		
 		echo "</td>"; 
 		echo "<td>";
-		echo  '<a href="index.php"> Modify </a>'; 
+		echo  "<a id='update-btn'class='modify-link' href='modify.php?id=".$row['ID']." & username=".$row['username']." & password=".$row['password']." & dob=".$row['dob']." & email=".$row['email']."'>Modify</a>";
 		echo "</td>"; 
 		echo "</tr>"; 
 

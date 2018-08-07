@@ -50,7 +50,7 @@ if ($result->num_rows > 0)
 	});
 	</script>
 	';
-	header('Location: addUser.php');
+	header('Location: admin.php');
 	die; 
 }
 else

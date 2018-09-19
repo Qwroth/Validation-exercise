@@ -15,7 +15,7 @@ $(function() {
 
 	$("#form_username").focusout(function() {
 
-		check_username();
+		check_username(); 
 		
 	});
 
@@ -43,24 +43,53 @@ $(function() {
 		
 	});
 
+var xhttp = new XMLHttpRequest();
 
+				  xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				      document.getElementById("username_error_message").innerHTML = this.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "checkUsers.php?username=" + $("#form_username").val(), true);
+				  xhttp.send();
 	
 
 	function check_username() {
 	
 		var username_length = $("#form_username").val().length;
 		
-		if(username_length < 5 || username_length > 100) {
+		if(username_length < 5 || username_length > 50) {
 			$("#username_error_message").html("Should be between 5-50 characters");
 			$("#username_error_message").show();
 			$("#form_username").css("border-color", "red"); 
 			error_username = true;
-		} else {
-			$("#username_error_message").hide();
-			$("#form_username").css("border-color", ""); 
-		}
-	
+		}  else if(username_length > 5 || username_length < 50) {
+				
+				var xhttp = new XMLHttpRequest();
+
+				  xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				      document.getElementById("username_error_message").innerHTML = this.responseText;
+
+				    if(document.getElementById("username_error_message").innerHTML== "User already exists") {
+				  	$("#form_username").css("border-color", "red"); 
+				  	$("#username_error_message").show();
+				  	error_username = true;		  	
+				  } else {
+				  	$("#username_error_message").hide();
+					$("#form_username").css("border-color", ""); 
+				  }
+
+
+				    }
+				  };
+				  xhttp.open("GET", "checkUsers.php?username=" + $("#form_username").val(), true);
+				  xhttp.send();			  
+
+		}  
+
 	}
+
 
 	function check_password() {
 	

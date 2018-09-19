@@ -9,7 +9,9 @@
 
 <link rel="icon" type="image/png" href="images/favicon.ico">
 
+<script>
 
+</script>
 
 
 <img id ="banner" src="banner.gif" alt="Banner Image"/>
@@ -26,7 +28,7 @@
 <table class="myTable">
 
 <form id="form" action ="register.php" method="post"> 
-<tr><td>Chose Username: </td><td><input type="text" id="form_username" name = "form_username" class="form-control"></td><td><span  id="username_error_message" class="error_message"></span></td></tr>
+<tr><td>Chose Username: </td><td><input type="text" id="form_username" name = "form_username" class="form-control"></td><td><span  id="username_error_message" class="error_message"  ></span></td></tr>
 <tr><td>Email Address: </td><td><input type="text" id="form_email" name="form_email" class="form-control" placeholder="example@hotmail.com"></td><td><span  id="email_error_message"class ="error_message"></span></td></tr>
 <tr><td>Date of Birth: </td><td><input type="text" id="form_dob" name="form_dob" placeholder= "DD/MM/YYYY"class="form-control"></td><td><span  id="dob_error_message"class="error_message"></span></td></tr>
 <tr><td>Password: </td><td><input type="password" id="form_password" name="form_password" class="form-control"></td><td><span  id="password_error_message" class="error_message"></span></td></tr>
